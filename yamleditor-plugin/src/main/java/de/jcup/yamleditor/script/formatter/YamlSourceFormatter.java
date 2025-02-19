@@ -419,7 +419,7 @@ public class YamlSourceFormatter {
             resolver = new Resolver();
         }
 
-        return new Yaml(new Constructor(), new Representer(), options, new LoaderOptions(), resolver);
+        return new Yaml(new Constructor(new LoaderOptions()), new Representer(new DumperOptions()), options, new LoaderOptions(), resolver);
     }
 
     private class CommentsRescueContext {
